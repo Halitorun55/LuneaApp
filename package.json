@@ -5,14 +5,17 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "build:mac": "electron-builder --mac"
   },
-  "author": "Lunea CEO",
-  "license": "ISC",
   "build": {
-    "appId": "com.lunea.windows",
+    "appId": "com.lunea.app",
     "win": {
       "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.finance"
     }
   },
   "devDependencies": {
