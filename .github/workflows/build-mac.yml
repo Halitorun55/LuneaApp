@@ -7,6 +7,8 @@ on:
 jobs:
   build-mac:
     runs-on: macos-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       
@@ -19,10 +21,17 @@ jobs:
         run: npm install
         
       - name: Build Mac App
-        run: npm run build:mac
+        run: npm run build:mac -- --publish never
         
       - name: Upload Mac App
         uses: actions/upload-artifact@v4
         with:
           name: mac-app
           path: dist/*.dmg
+```
+
+Kaydet, kapat. Sonra:
+```
+git add .
+git commit -m "token fix"
+git push
