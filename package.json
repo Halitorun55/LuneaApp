@@ -1,0 +1,28 @@
+{
+  "name": "lunea-app",
+  "version": "1.0.0",
+  "description": "Lunea Finans Yönetimi",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "Lunea CEO",
+  "license": "ISC",
+  "build": {
+    "appId": "com.lunea.windows",
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^40.4.1",
+    "electron-builder": "^26.7.0"
+  },
+  "dependencies": {
+    "@capacitor-community/electron": "^5.0.1",
+    "@capacitor/android": "^8.1.0",
+    "@capacitor/cli": "^8.1.0",
+    "@capacitor/core": "^8.1.0"
+  }
+}
